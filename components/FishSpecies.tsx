@@ -1,22 +1,61 @@
-import React from 'react';
+// components/FishSpecies.tsx
+import React from "react";
+import Image from "next/image";
 
 const fishSpecies = [
-  { name: 'Tilapia', environment: 'Freshwater', growthRate: 'Fast' },
-  { name: 'Salmon', environment: 'Saltwater', growthRate: 'Moderate' },
-  { name: 'Catfish', environment: 'Freshwater', growthRate: 'Fast' },
-  { name: 'Trout', environment: 'Freshwater', growthRate: 'Moderate' },
+  {
+    name: "Tilapia",
+    environment: "Freshwater",
+    growthRate: "Fast",
+    image: "/api/placeholder/400/300",
+  },
+  {
+    name: "Salmon",
+    environment: "Saltwater",
+    growthRate: "Moderate",
+    image: "/api/placeholder/400/300",
+  },
+  {
+    name: "Catfish",
+    environment: "Freshwater",
+    growthRate: "Fast",
+    image: "/api/placeholder/400/300",
+  },
+  {
+    name: "Trout",
+    environment: "Freshwater",
+    growthRate: "Moderate",
+    image: "/api/placeholder/400/300",
+  },
 ];
 
 const FishSpecies = () => {
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Fish Species for Farming</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="space-y-8">
+      <h2 className="text-3xl font-bold text-sea-green text-center mb-8">
+        Fish Species for Farming
+      </h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {fishSpecies.map((fish, index) => (
-          <div key={index} className="bg-white p-4 rounded shadow">
-            <h3 className="text-xl font-semibold">{fish.name}</h3>
-            <p>Environment: {fish.environment}</p>
-            <p>Growth Rate: {fish.growthRate}</p>
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
+          >
+            <div className="relative h-48">
+              <Image
+                src={fish.image}
+                alt={fish.name}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            <div className="p-4">
+              <h3 className="text-xl font-semibold text-ocean-blue mb-2">
+                {fish.name}
+              </h3>
+              <p className="text-gray-600">Environment: {fish.environment}</p>
+              <p className="text-gray-600">Growth Rate: {fish.growthRate}</p>
+            </div>
           </div>
         ))}
       </div>
