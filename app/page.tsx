@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div>
-      <h1>Welcome to Fish Farming</h1>
+      <h1>Welcome to Gain Fisheries</h1>
       <nav>
         <Link href='/'>Home</Link>
         <Link href='/about'>About</Link>
