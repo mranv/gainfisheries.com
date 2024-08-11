@@ -15,7 +15,8 @@ const ContactForm = () => {
     setSubmitStatus("Submitting...");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formspree.io/f/xpwaroqv", {
+        // Replace with your Formspree form ID
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,10 +30,18 @@ const ContactForm = () => {
         setEmail("");
         setMessage("");
       } else {
-        setSubmitStatus("Failed to send message. Please try again.");
+        const errorData = await response.json();
+        setSubmitStatus(
+          `Failed to send message: ${errorData.error || "Unknown error"}`
+        );
       }
     } catch (error) {
-      setSubmitStatus("An error occurred. Please try again later.");
+      console.error("Error submitting form:", error);
+      setSubmitStatus(
+        `An error occurred: ${
+          error instanceof Error ? error.message : "Unknown error"
+        }`
+      );
     }
   };
 
