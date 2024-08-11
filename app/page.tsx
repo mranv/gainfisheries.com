@@ -20,10 +20,10 @@ export default function Home() {
             Our Mission
           </h2>
           <p className="text-gray-700">
-            At Gain Fisheries, we're committed to revolutionizing fish farming
-            through innovative techniques and sustainable practices. Our goal is
-            to provide high-quality, responsibly sourced fish while preserving
-            our aquatic ecosystems.
+            At Gain Fisheries, we&apos;re committed to revolutionizing fish
+            farming through innovative techniques and sustainable practices. Our
+            goal is to provide high-quality, responsibly sourced fish while
+            preserving our aquatic ecosystems.
           </p>
           <Link
             href="/about"
