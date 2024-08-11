@@ -1,8 +1,11 @@
 // app/page.tsx
 import Image from "next/image";
 import Link from "next/link";
-import ContactForm from "../components/ContactForm";
+import dynamic from "next/dynamic";
 
+const ContactForm = dynamic(() => import("../components/ContactForm"), {
+  ssr: false,
+});
 export default function Home() {
   return (
     <div className="space-y-16 py-12">
