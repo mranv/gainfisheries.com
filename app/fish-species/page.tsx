@@ -1,4 +1,4 @@
-import FishSpecies from '@/components/FishSpecies'
+import FishSpecies from '../../components/FishSpecies'
 
 export default function FishSpeciesPage() {
   return (
